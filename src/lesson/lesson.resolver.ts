@@ -1,9 +1,9 @@
-import { Resolver, Query } from "@nestjs/graphql";
-import { LessonClass } from "./lesson.type";
+import { Resolver, Query, Mutation } from "@nestjs/graphql";
+import { LessonType } from "./lesson.type";
 
-@Resolver(of => LessonClass)
+@Resolver(of => LessonType)
 export class LessonResolver {
-    @Query(returns => LessonClass)
+    @Query(returns => LessonType)
     lesson() {
         return {
             id: '2',
@@ -11,5 +11,10 @@ export class LessonResolver {
             startDate: (new Date()).toISOString,
             endDate: (new Date()).toISOString,
         }
+    }
+
+    @Mutation(returns => LessonType)
+    createLesson() {
+
     }
 }
