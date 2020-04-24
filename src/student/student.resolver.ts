@@ -9,17 +9,17 @@ export class StudentResolver {
         private studentService: StudentService,
     ) {}
 
-    // @Query(returns => StudentType)
-    // Student(
-    //     @Args('id') id: string, 
-    // ) {
-    //     return this.StudentService.getStudent(id);
-    // }
+    @Query(returns => StudentType)
+    getStudent(
+        @Args('id') id: string, 
+    ) {
+        return this.studentService.getStudent(id);
+    }
 
-    // @Query(returns => [StudentType])
-    // Students() {
-    //     return this.StudentService.getStudents();
-    // }
+    @Query(returns => [StudentType])
+    getStudents() {
+        return this.studentService.getStudents();
+    }
 
     @Mutation(returns => StudentType)
     createStudent(
