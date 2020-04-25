@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, ObjectIdColumn } from "typeorm";
+import { Entity, PrimaryColumn, ObjectIdColumn, Column } from "typeorm";
 
 @Entity()
 export class Lesson {
@@ -8,12 +8,15 @@ export class Lesson {
     @PrimaryColumn()
     id: string;
 
-    @PrimaryColumn()
+    @Column()
     name: string;
 
-    @PrimaryColumn()
+    @Column()
     startDate: string;
 
-    @PrimaryColumn()
+    @Column()
     endDate: string;
+
+    @Column()
+    students: string[];
 }
