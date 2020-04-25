@@ -10,6 +10,7 @@ import { StudentResolver } from './student.resolver';
       Student,
     ]),
   ],
-  providers: [StudentService, StudentResolver]
+  providers: [StudentService, StudentResolver],
+  exports: [StudentService],
 })
 export class StudentModule {}
